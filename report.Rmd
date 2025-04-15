@@ -31,6 +31,6 @@ map <- readRDS(here::here("output", "EMILIO.rds"))
 
 ## Regression
 ```{r reg}
-reg <- readRDS(here::here("output", "AMAKA.rds"))
+reg <- readRDS(here::here("output", "GGplot.rds"))
 ```
 

@@ -14,8 +14,8 @@ output/map.rds: code/Map.R
 output/summary_table.rds: code/Table.R
 	Rscript code/Table.R
 
-output/regressions.rds: code/Regression.R
-	Rscript code/Regression.R
+output/GGplot.rds: code/regression_am.R
+	Rscript code/regression_am.R
 
 clean:
 	rm -rf output/*.rds output/*.html
