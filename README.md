@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+The Makefile and report.Rmd overview the project flow if ur confused on where to put ur stuff. 
+
 Please update your code to call from the csv file here!
 
 The README.md instruction file, .gitignore, along with the final report will be stored in github, by themselves. 
