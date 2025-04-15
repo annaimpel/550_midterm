@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Please update your code to call from the csv file here!
 
 The README.md instruction file, .gitignore, along with the final report will be stored in github, by themselves. 
