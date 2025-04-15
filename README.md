@@ -1,8 +1,8 @@
 Please update your code to call from the csv file here!
 
-The README.md instruction file along with the final report will be stored in github, by themselves. 
+The README.md instruction file, .gitignore, along with the final report will be stored in github, by themselves. 
 
-The makefile, .gitignore, and .yaml for parameters will be stored in a github file (report tools)
+The makefile and .yaml for parameters will be stored in a github file (report tools)
 
 ***Both /code and /output folders have dummy files so I could push them... ignore!***
 
