@@ -4,12 +4,14 @@ output:
   html_document:
     toc: true
 author: Anna Impellitteri, Amaka Mgboh, Emilio Estrada, Maria Alvarez Nuncio
+params:
+  show_code: false
 ---
 
 # Introduction
 This is some info about the wastewater surveillance in the United States, according to the CDC. 
 
-```{r here-i-am, include = FALSE}
+```{r here-i-am}
 here::i_am(
   "report.Rmd"
 )
@@ -26,7 +28,7 @@ table <- readRDS(here::here("output", "MARY.rds"))
 
 ## Map
 ```{r map}
-map <- readRDS(here::here("output", "EMILIO.rds"))
+map <- readRDS(here::here("output", "analysis_out_EE.rds"))
 ```
 
 ## Regression
