@@ -51,3 +51,4 @@ descriptive %>%
   gtsave("output/descriptive_out_man.html")
 
 # Correct one
+
