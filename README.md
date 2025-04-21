@@ -1,5 +1,7 @@
 To build report, fork + clone repository and run make in the terminal. Renv should automatically update all packages. 
 
+This project analyzes CDC wastewater surveillance data to track SARS-CoV-2 RNA trends. It includes mapping, descriptive statistics, and modeling, compiled into a final HTML report.
+
 The /code folder contains .R script analysis files from each coder.
 
 Code outputs are stored in the /output folder as .rds files. 
