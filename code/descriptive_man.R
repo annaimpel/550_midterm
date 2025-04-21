@@ -8,9 +8,14 @@ library(gtsummary)
 library(readxl)
 library(tidyverse)
 library(gt)
+library(here)
+
+source(here("raw_data", "get_data.R"))
+data <- read_csv(here("data", "wastewater.csv"))
+
 
 # dataset
-NWSS <- read_csv("data/NWSS.csv")
+NWSS <- data
 # ptc_15d, population_served. sampling prior, wwtp_jurisdiction, date_start, date_end, detect_prop_15d
 
 # Labels
