@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = config$show_code)
 
 ## Descriptive Statistics
 ```{r descriptive-stats}
-table <- readRDS(here::here("output", "MARY.rds"))
+table <- readRDS(here::here("output", "descriptive_out_man.rds"))
 ```
 
 ## Map
