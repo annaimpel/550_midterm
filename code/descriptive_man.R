@@ -52,8 +52,8 @@ descriptive %>%
   gt::tab_header(
     title = "Descriptive Statistics of NWSS Data",
     subtitle = "Grouped by Sample Location and Year "
-  ) %>%
-  gtsave("output/descriptive_out_man.html")
+  ) 
+saveRDS(descriptive, file = here("output", "descriptive_out_man.rds"))
 
 # Correct one
 
