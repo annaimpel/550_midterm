@@ -2,10 +2,12 @@
 library(dplyr)
 library(ggplot2)
 library(maps)
+library(here)
 
-# Load data
-wastewater <- read.csv("/Users/emilioestrada/Downloads/NWSS_Public_SARS-CoV-2_Wastewater_Metric_Data_20250415.csv", 
-                       stringsAsFactors = FALSE)
+source(here("raw_data", "get_data.R"))
+data <- read_csv(here("data", "wastewater.csv"))
+
+wastewater <- data
 
 # Convert date_end to Date format if needed
 wastewater <- wastewater %>%
