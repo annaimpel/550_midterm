@@ -1,3 +1,6 @@
 show_code: false
+show_warnings: false
+show_errors: false
+show_messages: false
 title: "WW Report"
 author: "Anna Impellitteri, Amaka Mgboh, Emilio Estrada, Maria Alvarez Nuncio"

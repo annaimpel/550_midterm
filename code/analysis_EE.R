@@ -5,7 +5,7 @@ library(maps)
 library(here)
 
 source(here("raw_data", "get_data.R"))
-data <- read_csv(here("data", "wastewater.csv"))
+data <- readr::read_csv(here("raw_data", "wastewater.csv"))
 
 wastewater <- data
 
@@ -67,5 +67,5 @@ map_plot <- ggplot(merged_data, aes(x = long, y = lat, group = group, fill = avg
     panel.grid = element_blank()
   )
 
-# Save the map as an RDS file
-saveRDS(map_plot, "/Users/emilioestrada/550_midterm/output/analysis_out_EE.rds")
+
+saveRDS(map_plot, file = here("output", "analysis_out_EE.rds"))

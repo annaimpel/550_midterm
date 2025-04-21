@@ -1,6 +1,6 @@
 library(here)
 source(here("raw_data", "get_data.R"))
-data <- read_csv(here("data", "wastewater.csv"))
+data <- read_csv(here("raw_data", "wastewater.csv"))
 
 
 # Load necessary libraries
@@ -53,7 +53,7 @@ time_series <- wastewater_clean %>%
   summarise(mean_ptc_15d = mean(as.numeric(ptc_15d), na.rm = TRUE)) %>%
   mutate(rolling_avg = rollmean(mean_ptc_15d, k = 7, fill = NA))
 
-ggplot(time_series, aes(x = date_start)) +
+time_plot<- ggplot(time_series, aes(x = date_start)) +
   geom_line(aes(y = mean_ptc_15d), color = "steelblue", alpha = 0.5) +
   geom_line(aes(y = rolling_avg), color = "red", size = 1) +
   labs(
@@ -63,17 +63,10 @@ ggplot(time_series, aes(x = date_start)) +
   ) +
   theme_minimal()
 
-# ======== Correlation: Percent Change vs. Detection Proportion ========
-cor_result <- cor.test(
-  as.numeric(wastewater_clean$ptc_15d),
-  as.numeric(wastewater_clean$detect_prop_15d),
-  method = "spearman"
-)
 
-print(cor_result)
 
 # ======== Boxplot: Percent Change by Reporting Jurisdiction ========
-ggplot(wastewater_clean, aes(x = reporting_jurisdiction, y = as.numeric(ptc_15d))) +
+box_plot<- ggplot(wastewater_clean, aes(x = reporting_jurisdiction, y = as.numeric(ptc_15d))) +
   geom_boxplot(fill = "lightblue", outlier.color = "red", outlier.size = 1.5) +
   scale_y_continuous(trans = "log10") +
   labs(
@@ -84,19 +77,6 @@ ggplot(wastewater_clean, aes(x = reporting_jurisdiction, y = as.numeric(ptc_15d)
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-# ======== Investigate Sites with High Percentile Levels ========
-high_percentile_sites <- wastewater_clean %>%
-  filter(as.numeric(percentile) > 80)
 
-print(high_percentile_sites)
-
-# ======== Correlation with Population Served ========
-cor_population <- cor.test(
-  as.numeric(wastewater_clean$ptc_15d),
-  as.numeric(wastewater_clean$population_served),
-  method = "spearman"
-)
-
-print(cor_population)
-
-saveRDS(ggplot, here("550_midterm/output", "GGplot.rds"))
+saveRDS(time_plot, file = here("output", "timeplot.rds"))
+saveRDS(box_plot, file = here("output", "boxplot.rds"))

@@ -11,7 +11,7 @@ library(gt)
 library(here)
 
 source(here("raw_data", "get_data.R"))
-data <- read_csv(here("data", "wastewater.csv"))
+data <- read_csv(here("raw_data", "wastewater.csv"))
 
 
 # dataset

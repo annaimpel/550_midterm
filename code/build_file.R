@@ -1,10 +1,6 @@
-here::i_am(code/build_file.R)
+here::i_am("code/build_file.R")
 
 rmarkdown::render(
-  here::here("report.Rmd"),
-  output_file = here::here("output", "report.html"),
-  output_options = list(
-    message = FALSE, 
-    warning = FALSE 
-  )
+  here::here("report.Rmd"),                    
+  output_file = here::here("output", "report.html") 
 )
