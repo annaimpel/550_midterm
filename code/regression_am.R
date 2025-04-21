@@ -1,3 +1,8 @@
+library(here)
+source(here("raw_data", "get_data.R"))
+data <- read_csv(here("data", "wastewater.csv"))
+
+
 # Load necessary libraries
 library(tidyverse)
 library(lubridate)
