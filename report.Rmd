@@ -1,0 +1,38 @@
+---
+title: "Wastewater Surveillance Data"
+output: 
+  html_document:
+    toc: true
+author: Anna Impellitteri, Amaka Mgboh, Emilio Estrada, Maria Alvarez Nuncio
+params:
+  show_code: false
+---
+
+# Introduction
+This is some info about the wastewater surveillance in the United States, according to the CDC. 
+
+```{r here-i-am}
+here::i_am(
+  "report.Rmd"
+)
+
+library(yaml)
+config <- yaml::read_yaml("params.yaml") 
+knitr::opts_chunk$set(echo = config$show_code)  
+```
+
+## Descriptive Statistics
+```{r descriptive-stats}
+table <- readRDS(here::here("output", "MARY.rds"))
+```
+
+## Map
+```{r map}
+map <- readRDS(here::here("output", "analysis_out_EE.rds"))
+```
+
+## Regression
+```{r reg}
+reg <- readRDS(here::here("output", "GGplot.rds"))
+```
+
