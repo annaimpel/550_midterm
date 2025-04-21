@@ -11,12 +11,11 @@ library(readr)
 library(zoo)
 library(here)
 
-# Download the dataset directly from the URL
-url <- "https://data.cdc.gov/api/views/2ew6-ywp6/rows.csv?accessType=DOWNLOAD"
-wastewater <- read_csv(url) %>% clean_names()
 
 # View dataset structure
-glimpse(wastewater)
+glimpse(data)
+
+wastewater <- data
 
 # Convert 'date_start' and 'date_end' to Date format
 wastewater <- wastewater %>%
